@@ -1,5 +1,5 @@
 [project]
-name = "py_directus"
+name = "py-directus2"
 version = "0.0.30"
 description = "Python wrapper for asynchronous interaction with Directus"
 readme = "README.md"
@@ -7,6 +7,9 @@ requires-python = ">=3.10"
 license = { text = "MIT" }
 authors = [
     { name = "Panos Stavrianos", email = "panos@orbitsystems.gr" }
+]
+maintainers = [
+    { name = "Rafał Krupiński", email = "oeklo.it@fastmail.com" }
 ]
 keywords = ["python", "directus", "async", "asyncio", "api", "wrapper"]
 dependencies = [
