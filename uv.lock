@@ -155,7 +155,7 @@ wheels = [
 ]
 
 [[package]]
-name = "py-directus"
+name = "py-directus2"
 version = "0.0.30"
 source = { editable = "." }
 dependencies = [

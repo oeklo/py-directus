@@ -1,7 +1,7 @@
-site_name: py-directus
-repo_url: https://github.com/panos-stavrianos/py-directus
-repo_name: panos-stavrianos/py-directus
-site_author: Panos Stavrianos
+site_name: py-directus2
+repo_url: https://github.com/oeklo/py-directus
+repo_name: oeklo/py-directus
+site_author: Rafał Krupiński
 site_description: A Python wrapper for the Directus API
 
 
@@ -47,21 +47,14 @@ theme:
         name: Switch to system preference
 extra:
   social:
-    - icon: fontawesome/solid/globe
-      link: https://orbitsystems.gr
-      name: Find us on the web
-    - icon: fontawesome/brands/facebook
-      link: https://www.facebook.com/orbitsystems.gr
-      name: Find us on Facebook
-    - icon: fontawesome/brands/instagram
-      link: https://www.instagram.com/orbit.systems/
-      name: Find us on Instagram
-    - icon: fontawesome/brands/linkedin
-      link: https://www.linkedin.com/company/orbit-systems-greece
-      name: Find us on LinkedIn
-  generator: false
+    - name: Find us on the web
+      link: https://oeklo.at
+      icon: fontawesome/solid/globe
+    - name: Find us on Facebook
+      link: https://www.facebook.com/oeklogmbh/
+      icon: fontawesome/brands/facebook
 
-copyright: Copyright © 2023 Orbit Systems
+copyright: Copyright © 2025 öKlo GmbH
 
 plugins:
   - search

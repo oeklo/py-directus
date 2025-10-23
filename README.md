@@ -9,7 +9,7 @@
 >
 > If you find any issues or have any suggestions, please open an issue or a pull request.
 
-Documentation [here](https://panos-stavrianos.github.io/py-directus/)
+Documentation [here](https://oeklo.github.io/py-directus/)
 
 py-directus is a Python wrapper for asynchronous interaction with the Directus headless CMS API. It provides a convenient and
 easy-to-use interface for performing CRUD operations, querying data, and managing resources in Directus.
@@ -39,14 +39,14 @@ Dependencies:
 You can install the library directly from [pypi](https://pypi.org/project/py-directus/) using pip:
 
 ```shell
-$ pip install py-directus
+$ pip install py-directus2
 ```
 
 > FastAPI support requires additional dependencies installation. 
 > You can install them along others like this:
 
 ```shell
-$ pip install py-directus[FastAPI]
+$ pip install py-directus2[FastAPI]
 ```
 
 ## Authentication and Session Handling
@@ -434,3 +434,7 @@ python -m unittest discover -s tests/unit
 
 python -m unittest discover -s tests/integration
 ```
+
+# Acknowledgments
+
+This is a fork of [py-directus](https://github.com/panos-stavrianos/py-directus)

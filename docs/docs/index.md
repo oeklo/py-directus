@@ -26,14 +26,14 @@ Dependencies:
 You can install the library directly from pypi using pip:
 
 ```shell
-$ pip install py-directus
+$ pip install py-directus2
 ```
 
 > FastAPI support requires the installation of additional dependencies. 
 > You can install them along others like so:
 
 ```shell
-$ pip install py-directus[FastAPI]
+$ pip install py-directus2[fastapi]
 ```
 
 ## Quickstart

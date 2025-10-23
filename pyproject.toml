@@ -32,8 +32,7 @@ fastapi = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/panos-stavrianos/py-directus"
-
+Documentation = "https://oeklo.github.com/py-directus"
 
 [build-system]
 requires = ["uv_build>=0.9.0"]
@@ -41,3 +40,4 @@ build-backend = "uv_build"
 
 [tool.uv.build-backend]
 module-root = ""
+module-name = 'py_directus'
