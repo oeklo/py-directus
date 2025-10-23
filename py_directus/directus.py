@@ -103,9 +103,7 @@ class Directus:
                 f"The provided collection model must be a subclass of pydantic.BaseModel"
             )
 
-            collection_name = collection.model_config.get("collection", None)
-
-            assert collection_name is not None
+            collection_name = collection.model_config["collection"]
 
             return DirectusRequest(self, collection_name, collection)
         elif isinstance(collection, str):
