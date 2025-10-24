@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import datetime as dt
+import uuid
 from enum import Enum
 from typing import Optional, Union, List, Pattern
 
@@ -11,6 +13,7 @@ from .types import ModelDateTime
 
 __all__ = [
     'BaseDirectusActivity',
+    'BaseDirectusComment',
     'BaseDirectusRevision',
     'BaseDirectusRoles',
     'BaseDirectusRole',
@@ -45,6 +48,21 @@ class BaseDirectusActivity(DirectusModel):
     user: Optional[Union[str, 'directus_model_settings.DirectusUser']] = None
     user_agent: Optional[str] = None
     revisions: Optional[List[Union[int, 'directus_model_settings.DirectusRevision']]] = None
+
+
+class BaseDirectusComment(DirectusModel):
+    """Directus comment"""
+    model_config = DirectusConfigDict(collection="directus_comment")
+
+    id: uuid.UUID | None = None
+    collection: str | None = None
+    item: str | None = None
+    comment: str | None = None
+
+    user_created: str | None = None
+    date_created: dt.datetime | None = None
+    user_updated: str | None = None
+    date_updated: dt.datetime | None = None
 
 
 class BaseDirectusRevision(DirectusModel):
@@ -260,6 +278,7 @@ class BaseDirectusModels:
     Directus models.
     """
     DirectusActivity = BaseDirectusActivity
+    DirectusComment = BaseDirectusComment
     DirectusRevision = BaseDirectusRevision
     DirectusRole = BaseDirectusRole
     DirectusRoles = BaseDirectusRoles

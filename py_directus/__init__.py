@@ -15,6 +15,7 @@ except ImportError:
     pass
 
 DirectusActivity: Type['BaseDirectusActivity'] = BaseDirectusActivity
+DirectusComment: Type['BaseDirectusComment'] = BaseDirectusComment
 DirectusRevision: Type['BaseDirectusRevision'] = BaseDirectusRevision
 DirectusRole: Type['BaseDirectusRole'] = BaseDirectusRole
 DirectusRoles: Type['BaseDirectusRoles'] = BaseDirectusRoles
@@ -51,7 +52,8 @@ def rebuild_models():
     """
     global_var_names = [
         'DirectusActivity', 
-        'DirectusRevision', 
+        'DirectusComment',
+        'DirectusRevision',
         'DirectusRole', 
         # 'DirectusRoles', 
         'DirectusUser', 
@@ -78,6 +80,7 @@ def setup_models(directus_models: Type['BaseDirectusModels'] = BaseDirectusModel
     """
     global_var_names = [
         'DirectusActivity',
+        'DirectusComment',
         'DirectusRevision',
         'DirectusRole',
         'DirectusRoles',
