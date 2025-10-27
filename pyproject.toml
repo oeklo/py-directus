@@ -1,6 +1,6 @@
 [project]
 name = "py-directus2"
-version = "0.0.31"
+version = "0.1.0"
 description = "Python wrapper for asynchronous interaction with Directus"
 readme = "README.md"
 requires-python = ">=3.10"

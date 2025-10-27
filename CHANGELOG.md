@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+
+## [0.1.0] - 2025-10-27
 ### Added
 
 - Comment model.
@@ -28,6 +30,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Don't use outdated private pydantic methods.
 
 
-
-[unreleased]: https://github.com/oeklo/py-directus/compare/v0.0.31...HEAD
+[unreleased]: https://github.com/oeklo/py-directus/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/oeklo/py-directus/compare/v0.0.31...v0.1.0
 [0.0.31]: https://github.com/oeklo/py-directus/compare/0.0.30...v0.0.31
