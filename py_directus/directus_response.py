@@ -2,21 +2,10 @@ from __future__ import annotations
 
 import inspect
 import json as jsonlib
-from typing import (
-    Union, Optional, 
-    TypeVar, Any, List, Dict, Coroutine
-)
-
-try:
-    from rich import print  # noqa
-    from rich.console import Console  # noqa
-except:
-    pass
+from typing import Any, Coroutine, Dict, List, Optional, TypeVar, Union
 
 from httpx import Response
-
 from pydantic import BaseModel, TypeAdapter
-
 
 RESOLUTION_EXCEPTION_MESSAGE = (
     "The response is not resolved at this point, "
@@ -247,6 +236,13 @@ class DirectusResponse:
         return needed_data
 
     def print_explanation(self, show_headers=True, show_cookies=True):
+        try:
+            from rich.console import Console
+        except ImportError:
+            import warnings
+            warnings.warn("print_explanation is available only with rich", ImportWarning)
+            return
+
         console = Console()
         needed_data = self.get_explanation(show_headers=show_headers, show_cookies=show_cookies)
 

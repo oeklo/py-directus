@@ -3,9 +3,6 @@ from functools import wraps
 from http import HTTPStatus
 from typing import Union, Optional, List
 
-from dotenv import load_dotenv
-from httpx import AsyncClient
-
 from fastapi import HTTPException
 from fastapi.security.utils import get_authorization_scheme_param
 

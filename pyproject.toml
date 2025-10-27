@@ -18,12 +18,14 @@ dependencies = [
     "json-fix>=0.5.2,<1.0.0",
     "platformdirs",
     "pydantic>2.0",
-    "python-dotenv>=1.0.0,<2.0.0",
-    "rich>=13.6.0,<14.0.0",
     "websockets>=11.0.3"
 ]
 
 [project.optional-dependencies]
+dev = [
+    "python-dotenv>=1.0.0,<2.0.0",
+    "rich>=13.6.0,<14.0.0",
+]
 fastapi = [
     "anyio>=3.7.1,<4.0.0",
     "fastapi",

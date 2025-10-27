@@ -164,12 +164,14 @@ dependencies = [
     { name = "json-fix" },
     { name = "platformdirs" },
     { name = "pydantic" },
-    { name = "python-dotenv" },
-    { name = "rich" },
     { name = "websockets" },
 ]
 
 [package.optional-dependencies]
+dev = [
+    { name = "python-dotenv" },
+    { name = "rich" },
+]
 fastapi = [
     { name = "anyio" },
     { name = "fastapi" },
@@ -188,13 +190,13 @@ requires-dist = [
     { name = "json-fix", specifier = ">=0.5.2,<1.0.0" },
     { name = "platformdirs" },
     { name = "pydantic", specifier = ">2.0" },
-    { name = "python-dotenv", specifier = ">=1.0.0,<2.0.0" },
+    { name = "python-dotenv", marker = "extra == 'dev'", specifier = ">=1.0.0,<2.0.0" },
     { name = "python-magic", marker = "extra == 'magic'", specifier = ">=0.4.27,<0.5" },
-    { name = "rich", specifier = ">=13.6.0,<14.0.0" },
+    { name = "rich", marker = "extra == 'dev'", specifier = ">=13.6.0,<14.0.0" },
     { name = "starlette", marker = "extra == 'fastapi'" },
     { name = "websockets", specifier = ">=11.0.3" },
 ]
-provides-extras = ["fastapi", "magic"]
+provides-extras = ["dev", "fastapi", "magic"]
 
 [[package]]
 name = "pydantic"

@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Make python-magic an optional dependency.
+- Make rich and python-dotenv dev dependencies.
 
 
 ## [0.0.31] - 2025-10-23

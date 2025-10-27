@@ -1,8 +1,5 @@
 import json
 
-from rich import print  # noqa
-from rich.console import Console  # noqa
-
 from py_directus.expression import Expression
 from py_directus.operators import FILTER_OPERATORS
 
@@ -137,6 +134,13 @@ class F(Expression):
         return "\n".join(result)
 
     def print_explanation(self, tab_char="  "):
+        try:
+            from rich.console import Console
+        except ImportError:
+            import warnings
+            warnings.warn("print_explanation is available only with rich", ImportWarning)
+            return
+
         console = Console()
         explain = self.get_explanation(tab_char)
 

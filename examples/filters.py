@@ -2,7 +2,7 @@ import json
 
 try:
     from rich import print  # noqa
-except:
+except ImportError:
     pass
 
 from py_directus import F
