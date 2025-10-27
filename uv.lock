@@ -165,7 +165,6 @@ dependencies = [
     { name = "platformdirs" },
     { name = "pydantic" },
     { name = "python-dotenv" },
-    { name = "python-magic" },
     { name = "rich" },
     { name = "websockets" },
 ]
@@ -175,6 +174,9 @@ fastapi = [
     { name = "anyio" },
     { name = "fastapi" },
     { name = "starlette" },
+]
+magic = [
+    { name = "python-magic" },
 ]
 
 [package.metadata]
@@ -187,12 +189,12 @@ requires-dist = [
     { name = "platformdirs" },
     { name = "pydantic", specifier = ">2.0" },
     { name = "python-dotenv", specifier = ">=1.0.0,<2.0.0" },
-    { name = "python-magic", specifier = ">=0.4.27,<1.0.0" },
+    { name = "python-magic", marker = "extra == 'magic'", specifier = ">=0.4.27,<0.5" },
     { name = "rich", specifier = ">=13.6.0,<14.0.0" },
     { name = "starlette", marker = "extra == 'fastapi'" },
     { name = "websockets", specifier = ">=11.0.3" },
 ]
-provides-extras = ["fastapi"]
+provides-extras = ["fastapi", "magic"]
 
 [[package]]
 name = "pydantic"

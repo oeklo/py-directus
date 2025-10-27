@@ -11,7 +11,6 @@ from typing import (
     Type, Any, List, Dict, Tuple
 )
 
-import magic
 from httpx import AsyncClient, Auth, Response
 from pydantic import BaseModel
 
@@ -207,13 +206,24 @@ class Directus:
 
         return response
 
-    async def upload_file(self, to_upload: Union[str, 'UploadFile'], folder: str = None) -> DirectusResponse:
+    async def upload_file(
+        self,
+        to_upload: Union[str, 'UploadFile'],
+        folder: str = None,
+        media_type: str | None = None,
+        use_magic: bool = True
+    ) -> DirectusResponse:
         """
         Upload a file to Directus.
 
         :param to_upload: full path to file as a string or a `starlette.UploadFile` object.
         :param folder: (optional) name of a `directus_folder` collection record.
+        :param media_type: (optional) mime type of the file.
+        :param use_magic: Whether to use libmagic (defaults to True)
         """
+        if use_magic and media_type:
+            raise TypeError('use_magic and media_type are mutually exclusive')
+
         url = f"{self.url}/files"
 
         folder_id = None
@@ -229,14 +239,17 @@ class Directus:
         if isinstance(to_upload, str):
             # file name with extension
             file_name = os.path.basename(to_upload)
-            file_mime = magic.from_file(to_upload, mime=True)
+
+            if not media_type and use_magic:
+                import magic
+                media_type = magic.from_file(to_upload, mime=True)
 
             data = {
                 "title": os.path.splitext(file_name)[0],
             }
             f = open(to_upload, 'rb')
             files = {
-                "file": (file_name, f, file_mime)
+                "file": (file_name, f, media_type)
             }
         elif isinstance(to_upload, UploadFile):
             data = {

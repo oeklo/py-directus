@@ -26,8 +26,8 @@ easy-to-use interface for performing CRUD operations, querying data, and managin
 
 Dependencies:
 - [Pydantic](https://pydantic-docs.helpmanual.io/): This library leverages Pydantic for data validation and parsing. Pydantic is a powerful tool in Python for ensuring data integrity and handling data validation with ease.
-
 - [HTTPX](https://www.python-httpx.org/): The library utilizes HTTPX, a fully featured HTTP client for Python 3, which provides sync and async APIs, and support for both HTTP/1.1 and HTTP/2.
+- [python-magic](https://pypi.org/project/python-magic/): Wrapper for libmagic library for detecting media types.
 
 > Directus API:
 > This library interacts with the [Directus API](https://docs.directus.io/reference/introduction.html).
@@ -47,6 +47,14 @@ $ pip install py-directus2
 
 ```shell
 $ pip install py-directus2[FastAPI]
+```
+
+To detect media types when uploading files, you'll need to have `python-magic` and `libmagic` installed in your system.
+
+`python-magic` can be installed with "magic" extra:
+
+```shell
+$ pip install py-directus2[magic]
 ```
 
 ## Authentication and Session Handling
