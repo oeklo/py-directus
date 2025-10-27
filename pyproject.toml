@@ -37,7 +37,7 @@ magic = [
 
 [project.urls]
 changelog = "https://raw.githubusercontent.com/oeklo/py-directus/refs/heads/main/CHANGELOG.md"
-documentation = "https://oeklo.github.com/py-directus"
+documentation = "https://oeklo.github.io/py-directus"
 issues = "https://github.com/oeklo/py-directus/issues"
 source = "https://github.com/oeklo/py-directus"
 
